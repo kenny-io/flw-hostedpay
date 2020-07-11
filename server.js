@@ -2,6 +2,8 @@ var express = require("express");
 var Cors = require("cors");
 var app = express();
 var axios = require("axios");
+require("dotenv").config();
+var bodyParser = require("body-parser");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(Cors());
@@ -19,7 +21,7 @@ app.use(function (req, res, next) {
 
 let config = {
   headers: {
-    Authorization: "Bearer FLWSECK_TEST-a514d8f1abd080db1502a144f22954dc-X",
+    Authorization: process.env.Authorization,
   },
 };
 
