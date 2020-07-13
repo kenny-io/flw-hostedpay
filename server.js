@@ -15,7 +15,6 @@ app.use(function (req, res, next) {
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept, Authorization"
   );
-  res.header("Access-Control-Allow-Origin", "*");
   next();
 });
 
@@ -34,7 +33,6 @@ app.post("/pay", function (req, res) {
       console.log(response.data);
     })
     .catch(function (error) {
-      console.log(error.message);
       console.log(error);
     });
 });
@@ -43,5 +41,3 @@ app.post("/pay", function (req, res) {
 app.listen(4000, function () {
   console.log("Node server running on port 4000");
 });
-
-module.exports = app;
